@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8">
+	<link type="text/css" href="/stylesheets/admin.css" rel="stylesheet">
+<title>ISALE订单管理系统V1.0</title>
+</head>
+<body>
+	<div id="head">
+			<div class="head ">
+					<div class="logo f16 left"><i><b>Isale</b></i>&nbsp;订单管理系统V1.0</div>
+					<div class="icon-menu right f12 m3">
+							<ul>
+									<li><a href="javascript:void(0);" class="passwordBtn a3"><i class="icon icon-psw-1"></i><br/>修改密码</a></li>
+									<li><a href="login.html" class="a3" target="_blank"><i class="icon icon-exit-1"></i><br/>退出</a></li>
+							</ul>
+					</div>
+			</div>
+	</div>
+	<div class="admin-menu border-3 f16">
+			<ul>
+					<li onClick="location.href='adminIndex.html'" class="selectedLi">网站首页</li>
+					<li onClick="location.href='adminOrder.html'">订单管理</li>
+                    <li onClick="location.href='adminUser.html'">会员管理</li>
+			</ul>
+			<br clear="both">
+	</div>
+	<div class="main m15">
+				<div class="border-3">
+							<h2>待办事项</h2>
+				</div>
+				<div class="border-1 m15-1 index-alert-2 index-alert">当前有15000条未审评论，请及时处理！<b class="right delete">
+                <font style="font-size:16px; line-height:16px;">×</font></b></div>
+				<div class="border-3">
+						<h2>数据统计</h2>
+				</div>
+				<div class="m15 index-icon">
+							<ul>
+									<li class="border"><i class="icon-member-order-2 icon"></i>未发货/<font class="green">150</font></li>
+									<li class="border"><i class="icon-member-order-1 icon"></i>已发货/<font class="c1">150</font></li>
+						</ul>
+							<br clear="both">
+					</div>	
+
+					
+					<div class="h15"></div>
+						
+	</div>
+	<div class="foot"><i><b>Isale</b></i>&nbsp;订单管理系统V1.0</div>
+ 	<div class="password">
+			<p><font color="red">提示信息</font></p>
+			<p><input type="text" placeholder="请输入原密码" class="input input-3 m10-1 border"></p>
+			<p><input type="password" placeholder="请输入新密码"  class="input input-3 m10-1  border"></p>
+			<p><input type="password" placeholder="请输入新密码"  class="input input-3 m10-1  border"></p>
+			<button class="btn btn-3 border-1 m10" onclick="location.href='#'">确定</button>
+	</div>	
+</body>
+</html>
+<script type="text/javascript" src="/public/jquery.js"></script>
+<script type="text/javascript" src="/public/layer/layer.min.js"></script>
+<script type="text/javascript" src="/javascripts/index.js"></script>
+<script>
+		//delete
+		$('.index-alert').find('.delete').click(function(){ 
+				/*return cofirm('是否删除') &&*/ $(this).closest('.index-alert').hide(500);
+		});
+</script>

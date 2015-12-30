@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8">
+<link type="text/css" href="/stylesheets/admin.css" rel="stylesheet">
+<title>DeMo网站后台管理系统V1.0</title>
+</head>
+<body style="position:inherit; background:url(/images/bg.jpg); ">
+<div id="login">
+			
+	<div class="div-center">
+			<div class="c1 f24">Isale订单管理系统V1.0</div>
+			<div class="login border-2">
+					<form action="adminIndex.html">
+							<p><input type="text" placeholder="用户名" class="input input-2 m10-1 login-bg icon-login border-1"></p>
+							<input type="password" placeholder="密码"  class="input input-2 m10-1 login-bg icon-lock border-1"></p>
+							<p><input type="password" placeholder="验证码"  class="input input-6 m10-1 login-bg icon-lock border-1">
+                            <img src="/images/code.jpg" style="margin-bottom:-16px;"></p>
+							<button class="btn btn-3 m10">登录</button>
+					</form>
+			</div>
+	</div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="/public/jquery.js"></script>
+<script type="text/javascript" src="/public/layer/layer.min.js"></script>
+<script type="text/javascript" src="/javascripts/index.js"></script>
+<script>
+$(document).ready(function(e) {
+	
+    	$('.nav>li').click(function(){
+		$(this).addClass('selected').siblings().removeClass();
+	});
+});
+//加载时适应浏览器高度
+
+$(document).ready(function() {
+
+    //模块尺寸
+    $('#login').css('height', $(window).height());
+})
+//改变窗体大小时适应浏览器高度
+$(window).resize(function() {
+    //模块尺寸
+   $('#login').css('height', $(window).height());
+
+});
+</script>
