@@ -31,3 +31,6 @@ node_modules
 .idea/.name
 .idea/misc.xml
 .idea/vcs.xml
+
+#bower components
+app/resources/public/bower_components/
