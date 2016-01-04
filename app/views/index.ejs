@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app="isaleApp">
+
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <link rel='stylesheet' href='/isale/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/isale/stylesheets/admin.css'/>
+    <script type="application/javascript"
+            src="/isale/public/bower_components/angular/angular.min.js"></script>
+    <script src="/isale/public/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="application/javascript"
+            src="/isale/javascripts/app.js"></script>
+</head>
+<body>
+<head-bar></head-bar>
+<menu-bar></menu-bar>
+
+<div ng-view></div>
+
+<foot-bar>
 </html>
+</body>
