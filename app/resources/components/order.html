@@ -1,8 +1,59 @@
-<table>
+<!--<table>
     <tr ng-repeat="x in names">
         <td>{{ x.Name }}</td>
         <td>{{ x.Country }}</td>
     </tr>
-</table>
+</table>-->
 
+
+<div class="box">
+    <div class="table-list">
+        <div class="table-title border">
+            <div class="w5">选择</div>
+            <div class="w5">ID</div>
+            <div class="w15">商品名称</div>
+            <div class="w10">订单编号</div>
+            <div class="w10">支付时间</div>
+            <div class="w5">数量</div>
+            <div class="w10">金额</div>
+            <div class="w15">账号</div>
+            <div class="w5">方式</div>
+            <div class="w10">备注信息</div>
+            <div class="w10">操作</div>
+
+        </div>
+
+
+        <div class="table border" ng-repeat="r in records">
+            <div class="w5"><input type="checkbox"></div>
+            <div class="w5">{{ r.id }}</div>
+            <div class="w15">{{ r.name }}</div>
+            <div class="w15">{{ r.orderId }}</div>
+            <div class="w10">{{ r.num }}</div>
+            <div class="w10">{{ r.price }}</div>
+            <div class="w5">{{ r.account }}</div>
+            <div class="w10">{{ r.paymethod }}</div>
+            <div class="w15">{{ r.remark }}</div>
+            <div class="w10"><a href="javascript:void(0);" class="expressBtn btn-6 a3">发货</a></div>
+            <br clear="both">
+        </div>
+
+
+        <!--page begin-->
+        <div id="page" class="m15-1 ">
+            <div class="left"><input type="checkbox"><a href="javascript:void(0)">全选</a>&nbsp;<a
+                    href="javascript:void(0)">删除</a>&nbsp;当前共有发货订单<font class="c1">{{ total }}</font>个
+            </div>
+            <ul class="page right">
+                <li class="page-wrap w34"><</li>
+                <li class="page-cur w34">1</li>
+                <li class="page-wrap w34">2</li>
+                <li class="page-wrap w34">3</li>
+                <li class="page-wrap w34">4</li>
+                <li class="page-wrap w34">5</li>
+                <li class="page-wrap w34">></li>
+            </ul>
+        </div>
+        <!--page end-->
+    </div>
 </div>
