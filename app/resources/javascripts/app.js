@@ -6,7 +6,16 @@
 
 var module = angular.module('isaleApp',['ngRoute']);
 
-
+module.config(function($routeProvider){
+    $routeProvider
+        .when('/order',{
+            controller:'OrderController',
+            templateUrl:'/isale/components/order.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+});
 
 module.directive('headBar',function(){
     return {
@@ -30,3 +39,12 @@ module.directive('footBar',function(){
         replace:true
     }
 });
+
+
+
+module.controller('OrderController',function($scope,$http){
+    $http.get("/isale/testdata")
+        .success(function (response) {$scope.names = response.records;});
+});
+
+
