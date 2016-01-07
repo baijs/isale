@@ -7,22 +7,30 @@ var config = require('../config/dbConfig');
 
 var sequelize = new Sequelize(config.dbUrl);
 
-var User = sequelize.define('user', {
-    firstName: {
-        type: Sequelize.STRING //,
-        //field: 'first_name' // Will result in an attribute that is firstName when user facing but first_name in the database
-    },
-    lastName: {
-        type: Sequelize.STRING
-    }
-}, {
-    freezeTableName: true // Model tableName will be the same as the model name
-});
+var User = sequelize.import('../models/User');
+var Order = sequelize.import('../models/Order');
 
+Order.sync({force: true}).then(function () {
+    console.info('Sync order table');
+});
 User.sync({force: false}).then(function () {
     // Table created
     return User.create({
-        firstName: 'John',
-        lastName: 'Hancock'
+        firstName: 'Kali',
+        lastName: 'Ben'
     });
 });
+
+
+User.update({firstName: 'bai'},
+    {where: {lastName: 'Ben'}}
+);
+
+
+sequelize.query('select firstName from user',
+    {type: sequelize.QueryTypes.SELECT}).then(function (data) {
+        data.forEach(function (d) {
+            console.info(d.firstName);
+        })
+
+    });
