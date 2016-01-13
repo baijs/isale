@@ -7,30 +7,20 @@ var config = require('../config/dbConfig');
 
 var sequelize = new Sequelize(config.dbUrl);
 
-var User = sequelize.import('../models/User');
 var Order = sequelize.import('../models/Order');
+var Good = sequelize.import('../models/Good');
+var Logistic = sequelize.import('../models/Logistic');
+var Member = sequelize.import('../models/Member');
 
-Order.sync({force: true}).then(function () {
+Order.sync({force: false}).then(function () {
     console.info('Sync order table');
 });
-User.sync({force: false}).then(function () {
-    // Table created
-    return User.create({
-        firstName: 'Kali',
-        lastName: 'Ben'
-    });
+Good.sync({force: false}).then(function () {
+    console.info('Sync good table');
 });
-
-
-User.update({firstName: 'bai'},
-    {where: {lastName: 'Ben'}}
-);
-
-
-sequelize.query('select firstName from user',
-    {type: sequelize.QueryTypes.SELECT}).then(function (data) {
-        data.forEach(function (d) {
-            console.info(d.firstName);
-        })
-
-    });
+Logistic.sync({force:false}).then(function(){
+    console.info('Sync logistic table');
+});
+Member.sync({force:false}).then(function(){
+    console.info('Sync member table');
+});

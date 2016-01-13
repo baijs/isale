@@ -8,12 +8,20 @@ var module = angular.module('isaleApp', ['ngRoute']);
 
 module.config(function ($routeProvider) {
     $routeProvider
+        .when('/home', {
+            controller: 'HomeController',
+            templateUrl:'/isale/components/home.html'
+        })
         .when('/order', {
             controller: 'OrderController',
             templateUrl: '/isale/components/order.html'
         })
+        .when('/memb',{
+            controller:'MemberController',
+            templateUrl:'/isale/components/member.html'
+        })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/home'
         });
 });
 
@@ -49,4 +57,9 @@ module.controller('OrderController', function ($scope, $http) {
         });
 });
 
+module.controller('MemberController',function($scope,$http){
 
+});
+module.controller('HomeController',function($scope,$http){
+
+});
